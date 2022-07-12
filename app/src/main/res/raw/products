@@ -1,0 +1,71 @@
+{
+  "products": [
+    {
+      "name": "Mobile Phone",
+      "description": "With 12GB ram and 256 storage",
+      "regularPrice": 26999,
+      "salePrice": 21999,
+      "productPhoto": "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/phones/new-phones/model-banner/p50-black.png",
+      "colorList": [
+        "Red",
+        "Blue",
+        "Green"
+      ],
+      "storeList": [
+        {
+          "name": "Abc Store",
+          "address": "Gurgaon"
+        },
+        {
+          "name": "MVC Store",
+          "address": "Gurgaon"
+        }
+      ]
+    },
+    {
+      "name": "HP Laptop",
+      "description": "With 12GB ram and 256 storage",
+      "regularPrice": 58999,
+      "salePrice": 48999,
+      "productPhoto": "https://static.toiimg.com/thumb/resizemode-4,msid-59642405,width-1200,height-900/59642405.jpg  ",
+      "colorList": [
+        "Silver",
+        "Black"
+
+      ],
+      "storeList": [
+        {
+          "name": "Haryana Store",
+          "address": "Gurgaon"
+        },
+        {
+          "name": "MVC Store",
+          "address": "Gurgaon"
+        }
+      ]
+    },
+    {
+      "name": "Macbook",
+      "description": "With 12GB ram and 256 storage",
+      "regularPrice": 109999,
+      "salePrice": 81999,
+      "productPhoto": "https://photos5.appleinsider.com/gallery/40575-78549-13-inch-MacBook-Air-apps-xl.jpg",
+      "colorList": [
+        "Yellow",
+        "Silver",
+        "Purple"
+      ],
+      "storeList": [
+        {
+          "name": "151 Store",
+          "address": "Gurgaon"
+        },
+        {
+          "name": "Abc Store",
+          "address": "Gurgaon"
+        }
+      ]
+    }
+  ]
+}
+
