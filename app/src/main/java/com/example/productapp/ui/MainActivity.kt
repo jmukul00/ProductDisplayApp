@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity(), ProductClickListener {
         val notesAdapter = ProductsAdapter(this, this)
         binding.rvNotes.adapter = notesAdapter
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[ProductsViewModel ::class.java]
+
+        // fetch the data from the room database
         viewModel.allProducts.observe(this) { list ->
             list?.let {
                 if (it.isEmpty()){
@@ -54,16 +56,7 @@ class MainActivity : AppCompatActivity(), ProductClickListener {
 
     }
 
- /*   override fun onProductUpdateClick(product: Product) {
-        TODO("Not yet implemented")
-    }
 
-    override fun onProductDeleteClick(product: Product) {
-        Log.d("TAG",product.id.toString())
-        viewModel.deleteProduct(product)
-        Toast.makeText(this, "${product.name} Deleted", Toast.LENGTH_LONG).show()
-    }
-*/
     override fun onProductClick(product: Product) {
         val intent = Intent(this@MainActivity, ProductDetailsActivity::class.java)
         startActivity(intent)

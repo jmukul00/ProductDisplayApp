@@ -27,7 +27,7 @@ class EditProductActivity : AppCompatActivity() {
         binding = ActivityEditProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //Show the data in the edit text for editing
         binding.txtUpdateProductName.setText(Common.clickedProduct.name)
         binding.txtUpdateProductDescription.setText(Common.clickedProduct.description)
         binding.txtUpdateProductRegularPrice.setText(Common.clickedProduct.regularPrice)
@@ -50,6 +50,8 @@ class EditProductActivity : AppCompatActivity() {
                 Common.clickedProduct.storeList
             )
             updateProduct.id = Common.clickedProduct.id
+
+            // update the data in the room database
             viewModel.updateProduct(updateProduct)
 
             val intent = Intent(this, MainActivity::class.java)
@@ -60,30 +62,5 @@ class EditProductActivity : AppCompatActivity() {
             Toast.makeText(this, "Product Updated...", Toast.LENGTH_LONG).show()
         }
 
-        /* btnAddProduct.setOnClickListener {
-             val productName = edtProductName.text.toString()
-             val productDescription = edtProductDescription.text.toString()
-             if (productClickType== "Edit"){
-                 if (productName.isNotEmpty() && productDescription.isNotEmpty()){
-                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                     val currentDate: String =sdf.format(Date())
-                     val updateProduct = Product(productName, productDescription, "150", "110", "")
-                     updateProduct.id = productId
-                     viewModel.updateProduct(updateProduct)
-                     Toast.makeText(this, "Product Updated...", Toast.LENGTH_LONG).show()
-
-                 }
-             }else{
-                 if (productName.isNotEmpty() && productDescription.isNotEmpty()){
-                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                     val currentDate: String =sdf.format(Date())
-                     viewModel.addProduct(Product(productName, productDescription, "150", "110", ""))
-                     Toast.makeText(this, "Product Added...", Toast.LENGTH_LONG).show()
-                 }
-             }
-             startActivity(Intent(applicationContext, MainActivity::class.java))
-             //this.finish()
-
-         }*/
     }
 }

@@ -42,6 +42,8 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding.txtProductSalePrice.text = "Rs. ${Common.clickedProduct.salePrice}"
 
         for (i in 0 until Common.clickedProduct.colorList.size){
+
+            // Display the radio button dynamically
             val rbColor = RadioButton(this)
 
             rbColor.background = ContextCompat.getDrawable(this, R.drawable.radio_selector)
@@ -81,6 +83,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         Picasso.get().load(Common.clickedProduct.productPhoto).into(binding.imgProduct)
         binding.imgProduct.setOnClickListener {
+            // show the image in the dialog when clicked
             showImage()
         }
 
@@ -89,7 +92,8 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun showImage() {
+    private fun showImage() {
+
         val builder = Dialog(this)
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE)
         builder.window?.setBackgroundDrawable(

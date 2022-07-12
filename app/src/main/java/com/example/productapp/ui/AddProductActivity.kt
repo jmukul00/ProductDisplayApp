@@ -33,6 +33,7 @@ class AddProductActivity : AppCompatActivity() {
 
         binding.btnAddProduct1.setOnClickListener{
             try {
+                // Store the data in the Room database
                 viewModel.addProduct(getJsonData(0))
                 Toast.makeText(this, "ProductAdded", Toast.LENGTH_SHORT).show()
             }
@@ -72,6 +73,7 @@ class AddProductActivity : AppCompatActivity() {
     }
 
     private fun getJsonData(index:Int): Product{
+        // To read the json data from the file
         val text = resources.openRawResource(R.raw.products)
             .bufferedReader().use { it.readText() }
             val obj = JSONObject(text)
